@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E36AD5562A3A7A7C00410E0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AD5552A3A7A7C00410E0E /* AppDelegate.swift */; };
+		E36AD5582A3A7A7C00410E0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AD5572A3A7A7C00410E0E /* SceneDelegate.swift */; };
+		E36AD55A2A3A7A7C00410E0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AD5592A3A7A7C00410E0E /* ViewController.swift */; };
+		E36AD55D2A3A7A7C00410E0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36AD55B2A3A7A7C00410E0E /* Main.storyboard */; };
+		E36AD5602A3A7A7C00410E0E /* Examen_Coctel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E36AD55E2A3A7A7C00410E0E /* Examen_Coctel.xcdatamodeld */; };
+		E36AD5622A3A7A7E00410E0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E36AD5612A3A7A7E00410E0E /* Assets.xcassets */; };
+		E36AD5652A3A7A7E00410E0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36AD5632A3A7A7E00410E0E /* LaunchScreen.storyboard */; };
+		E36AD5702A3A7A7E00410E0E /* Examen_CoctelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AD56F2A3A7A7E00410E0E /* Examen_CoctelTests.swift */; };
+		E36AD57A2A3A7A7E00410E0E /* Examen_CoctelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AD5792A3A7A7E00410E0E /* Examen_CoctelUITests.swift */; };
+		E36AD57C2A3A7A7E00410E0E /* Examen_CoctelUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AD57B2A3A7A7E00410E0E /* Examen_CoctelUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E36AD56C2A3A7A7E00410E0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E36AD54A2A3A7A7C00410E0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E36AD5512A3A7A7C00410E0E;
+			remoteInfo = "Examen-Coctel";
+		};
+		E36AD5762A3A7A7E00410E0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E36AD54A2A3A7A7C00410E0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E36AD5512A3A7A7C00410E0E;
+			remoteInfo = "Examen-Coctel";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E36AD5522A3A7A7C00410E0E /* Examen-Coctel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Examen-Coctel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E36AD5552A3A7A7C00410E0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E36AD5572A3A7A7C00410E0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E36AD5592A3A7A7C00410E0E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E36AD55C2A3A7A7C00410E0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E36AD55F2A3A7A7C00410E0E /* Examen_Coctel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Examen_Coctel.xcdatamodel; sourceTree = "<group>"; };
+		E36AD5612A3A7A7E00410E0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E36AD5642A3A7A7E00410E0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E36AD5662A3A7A7E00410E0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E36AD56B2A3A7A7E00410E0E /* Examen-CoctelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Examen-CoctelTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E36AD56F2A3A7A7E00410E0E /* Examen_CoctelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Examen_CoctelTests.swift; sourceTree = "<group>"; };
+		E36AD5752A3A7A7E00410E0E /* Examen-CoctelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Examen-CoctelUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E36AD5792A3A7A7E00410E0E /* Examen_CoctelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Examen_CoctelUITests.swift; sourceTree = "<group>"; };
+		E36AD57B2A3A7A7E00410E0E /* Examen_CoctelUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Examen_CoctelUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E36AD54F2A3A7A7C00410E0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36AD5682A3A7A7E00410E0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36AD5722A3A7A7E00410E0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E36AD5492A3A7A7C00410E0E = {
+			isa = PBXGroup;
+			children = (
+				E36AD5542A3A7A7C00410E0E /* Examen-Coctel */,
+				E36AD56E2A3A7A7E00410E0E /* Examen-CoctelTests */,
+				E36AD5782A3A7A7E00410E0E /* Examen-CoctelUITests */,
+				E36AD5532A3A7A7C00410E0E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E36AD5532A3A7A7C00410E0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E36AD5522A3A7A7C00410E0E /* Examen-Coctel.app */,
+				E36AD56B2A3A7A7E00410E0E /* Examen-CoctelTests.xctest */,
+				E36AD5752A3A7A7E00410E0E /* Examen-CoctelUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E36AD5542A3A7A7C00410E0E /* Examen-Coctel */ = {
+			isa = PBXGroup;
+			children = (
+				E36AD5552A3A7A7C00410E0E /* AppDelegate.swift */,
+				E36AD5572A3A7A7C00410E0E /* SceneDelegate.swift */,
+				E36AD5592A3A7A7C00410E0E /* ViewController.swift */,
+				E36AD55B2A3A7A7C00410E0E /* Main.storyboard */,
+				E36AD5612A3A7A7E00410E0E /* Assets.xcassets */,
+				E36AD5632A3A7A7E00410E0E /* LaunchScreen.storyboard */,
+				E36AD5662A3A7A7E00410E0E /* Info.plist */,
+				E36AD55E2A3A7A7C00410E0E /* Examen_Coctel.xcdatamodeld */,
+			);
+			path = "Examen-Coctel";
+			sourceTree = "<group>";
+		};
+		E36AD56E2A3A7A7E00410E0E /* Examen-CoctelTests */ = {
+			isa = PBXGroup;
+			children = (
+				E36AD56F2A3A7A7E00410E0E /* Examen_CoctelTests.swift */,
+			);
+			path = "Examen-CoctelTests";
+			sourceTree = "<group>";
+		};
+		E36AD5782A3A7A7E00410E0E /* Examen-CoctelUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E36AD5792A3A7A7E00410E0E /* Examen_CoctelUITests.swift */,
+				E36AD57B2A3A7A7E00410E0E /* Examen_CoctelUITestsLaunchTests.swift */,
+			);
+			path = "Examen-CoctelUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E36AD5512A3A7A7C00410E0E /* Examen-Coctel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E36AD57F2A3A7A7E00410E0E /* Build configuration list for PBXNativeTarget "Examen-Coctel" */;
+			buildPhases = (
+				E36AD54E2A3A7A7C00410E0E /* Sources */,
+				E36AD54F2A3A7A7C00410E0E /* Frameworks */,
+				E36AD5502A3A7A7C00410E0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Examen-Coctel";
+			productName = "Examen-Coctel";
+			productReference = E36AD5522A3A7A7C00410E0E /* Examen-Coctel.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E36AD56A2A3A7A7E00410E0E /* Examen-CoctelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E36AD5822A3A7A7E00410E0E /* Build configuration list for PBXNativeTarget "Examen-CoctelTests" */;
+			buildPhases = (
+				E36AD5672A3A7A7E00410E0E /* Sources */,
+				E36AD5682A3A7A7E00410E0E /* Frameworks */,
+				E36AD5692A3A7A7E00410E0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E36AD56D2A3A7A7E00410E0E /* PBXTargetDependency */,
+			);
+			name = "Examen-CoctelTests";
+			productName = "Examen-CoctelTests";
+			productReference = E36AD56B2A3A7A7E00410E0E /* Examen-CoctelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E36AD5742A3A7A7E00410E0E /* Examen-CoctelUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E36AD5852A3A7A7E00410E0E /* Build configuration list for PBXNativeTarget "Examen-CoctelUITests" */;
+			buildPhases = (
+				E36AD5712A3A7A7E00410E0E /* Sources */,
+				E36AD5722A3A7A7E00410E0E /* Frameworks */,
+				E36AD5732A3A7A7E00410E0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E36AD5772A3A7A7E00410E0E /* PBXTargetDependency */,
+			);
+			name = "Examen-CoctelUITests";
+			productName = "Examen-CoctelUITests";
+			productReference = E36AD5752A3A7A7E00410E0E /* Examen-CoctelUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E36AD54A2A3A7A7C00410E0E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					E36AD5512A3A7A7C00410E0E = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					E36AD56A2A3A7A7E00410E0E = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = E36AD5512A3A7A7C00410E0E;
+					};
+					E36AD5742A3A7A7E00410E0E = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = E36AD5512A3A7A7C00410E0E;
+					};
+				};
+			};
+			buildConfigurationList = E36AD54D2A3A7A7C00410E0E /* Build configuration list for PBXProject "Examen-Coctel" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E36AD5492A3A7A7C00410E0E;
+			productRefGroup = E36AD5532A3A7A7C00410E0E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E36AD5512A3A7A7C00410E0E /* Examen-Coctel */,
+				E36AD56A2A3A7A7E00410E0E /* Examen-CoctelTests */,
+				E36AD5742A3A7A7E00410E0E /* Examen-CoctelUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E36AD5502A3A7A7C00410E0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E36AD5652A3A7A7E00410E0E /* LaunchScreen.storyboard in Resources */,
+				E36AD5622A3A7A7E00410E0E /* Assets.xcassets in Resources */,
+				E36AD55D2A3A7A7C00410E0E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36AD5692A3A7A7E00410E0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36AD5732A3A7A7E00410E0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E36AD54E2A3A7A7C00410E0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E36AD55A2A3A7A7C00410E0E /* ViewController.swift in Sources */,
+				E36AD5602A3A7A7C00410E0E /* Examen_Coctel.xcdatamodeld in Sources */,
+				E36AD5562A3A7A7C00410E0E /* AppDelegate.swift in Sources */,
+				E36AD5582A3A7A7C00410E0E /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36AD5672A3A7A7E00410E0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E36AD5702A3A7A7E00410E0E /* Examen_CoctelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36AD5712A3A7A7E00410E0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E36AD57C2A3A7A7E00410E0E /* Examen_CoctelUITestsLaunchTests.swift in Sources */,
+				E36AD57A2A3A7A7E00410E0E /* Examen_CoctelUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E36AD56D2A3A7A7E00410E0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E36AD5512A3A7A7C00410E0E /* Examen-Coctel */;
+			targetProxy = E36AD56C2A3A7A7E00410E0E /* PBXContainerItemProxy */;
+		};
+		E36AD5772A3A7A7E00410E0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E36AD5512A3A7A7C00410E0E /* Examen-Coctel */;
+			targetProxy = E36AD5762A3A7A7E00410E0E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E36AD55B2A3A7A7C00410E0E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E36AD55C2A3A7A7C00410E0E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E36AD5632A3A7A7E00410E0E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E36AD5642A3A7A7E00410E0E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E36AD57D2A3A7A7E00410E0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E36AD57E2A3A7A7E00410E0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E36AD5802A3A7A7E00410E0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7TJ32VHQ9P;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Examen-Coctel/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.digis.Examen-Coctel";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E36AD5812A3A7A7E00410E0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7TJ32VHQ9P;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Examen-Coctel/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.digis.Examen-Coctel";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E36AD5832A3A7A7E00410E0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7TJ32VHQ9P;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.digis.Examen-CoctelTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Examen-Coctel.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Examen-Coctel";
+			};
+			name = Debug;
+		};
+		E36AD5842A3A7A7E00410E0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7TJ32VHQ9P;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.digis.Examen-CoctelTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Examen-Coctel.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Examen-Coctel";
+			};
+			name = Release;
+		};
+		E36AD5862A3A7A7E00410E0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7TJ32VHQ9P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.digis.Examen-CoctelUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Examen-Coctel";
+			};
+			name = Debug;
+		};
+		E36AD5872A3A7A7E00410E0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7TJ32VHQ9P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.digis.Examen-CoctelUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Examen-Coctel";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E36AD54D2A3A7A7C00410E0E /* Build configuration list for PBXProject "Examen-Coctel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E36AD57D2A3A7A7E00410E0E /* Debug */,
+				E36AD57E2A3A7A7E00410E0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E36AD57F2A3A7A7E00410E0E /* Build configuration list for PBXNativeTarget "Examen-Coctel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E36AD5802A3A7A7E00410E0E /* Debug */,
+				E36AD5812A3A7A7E00410E0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E36AD5822A3A7A7E00410E0E /* Build configuration list for PBXNativeTarget "Examen-CoctelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E36AD5832A3A7A7E00410E0E /* Debug */,
+				E36AD5842A3A7A7E00410E0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E36AD5852A3A7A7E00410E0E /* Build configuration list for PBXNativeTarget "Examen-CoctelUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E36AD5862A3A7A7E00410E0E /* Debug */,
+				E36AD5872A3A7A7E00410E0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E36AD55E2A3A7A7C00410E0E /* Examen_Coctel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E36AD55F2A3A7A7C00410E0E /* Examen_Coctel.xcdatamodel */,
+			);
+			currentVersion = E36AD55F2A3A7A7C00410E0E /* Examen_Coctel.xcdatamodel */;
+			path = Examen_Coctel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E36AD54A2A3A7A7C00410E0E /* Project object */;
+}
