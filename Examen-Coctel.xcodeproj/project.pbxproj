@@ -19,6 +19,7 @@
 		E36AD5702A3A7A7E00410E0E /* Examen_CoctelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AD56F2A3A7A7E00410E0E /* Examen_CoctelTests.swift */; };
 		E36AD57A2A3A7A7E00410E0E /* Examen_CoctelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AD5792A3A7A7E00410E0E /* Examen_CoctelUITests.swift */; };
 		E36AD57C2A3A7A7E00410E0E /* Examen_CoctelUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AD57B2A3A7A7E00410E0E /* Examen_CoctelUITestsLaunchTests.swift */; };
+		FA7E1B552A3A88DF005952D6 /* CoctelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E1B542A3A88DF005952D6 /* CoctelViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		E36AD5752A3A7A7E00410E0E /* Examen-CoctelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Examen-CoctelUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36AD5792A3A7A7E00410E0E /* Examen_CoctelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Examen_CoctelUITests.swift; sourceTree = "<group>"; };
 		E36AD57B2A3A7A7E00410E0E /* Examen_CoctelUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Examen_CoctelUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FA7E1B542A3A88DF005952D6 /* CoctelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctelViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		E36AD5542A3A7A7C00410E0E /* Examen-Coctel */ = {
 			isa = PBXGroup;
 			children = (
+				FA7E1B532A3A8882005952D6 /* ViewModel */,
 				7AB987002A3A881800177CE4 /* Modelo */,
 				7AB986FD2A3A854A00177CE4 /* Controller */,
 				E36AD5552A3A7A7C00410E0E /* AppDelegate.swift */,
@@ -150,6 +153,14 @@
 				E36AD57B2A3A7A7E00410E0E /* Examen_CoctelUITestsLaunchTests.swift */,
 			);
 			path = "Examen-CoctelUITests";
+			sourceTree = "<group>";
+		};
+		FA7E1B532A3A8882005952D6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA7E1B542A3A88DF005952D6 /* CoctelViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +299,7 @@
 				7AB986FC2A3A854500177CE4 /* CoctelesViewController.swift in Sources */,
 				7AB986FF2A3A881300177CE4 /* Coctel.swift in Sources */,
 				E36AD5562A3A7A7C00410E0E /* AppDelegate.swift in Sources */,
+				FA7E1B552A3A88DF005952D6 /* CoctelViewModel.swift in Sources */,
 				E36AD5582A3A7A7C00410E0E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
