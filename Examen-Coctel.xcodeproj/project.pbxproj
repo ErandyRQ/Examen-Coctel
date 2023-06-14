@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7AB986FC2A3A854500177CE4 /* CoctelesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB986FB2A3A854500177CE4 /* CoctelesViewController.swift */; };
 		E36AD5562A3A7A7C00410E0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AD5552A3A7A7C00410E0E /* AppDelegate.swift */; };
 		E36AD5582A3A7A7C00410E0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AD5572A3A7A7C00410E0E /* SceneDelegate.swift */; };
 		E36AD55A2A3A7A7C00410E0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AD5592A3A7A7C00410E0E /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7AB986FB2A3A854500177CE4 /* CoctelesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctelesViewController.swift; sourceTree = "<group>"; };
 		E36AD5522A3A7A7C00410E0E /* Examen-Coctel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Examen-Coctel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36AD5552A3A7A7C00410E0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E36AD5572A3A7A7C00410E0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7AB986FD2A3A854A00177CE4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7AB986FB2A3A854500177CE4 /* CoctelesViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		E36AD5492A3A7A7C00410E0E = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +111,7 @@
 		E36AD5542A3A7A7C00410E0E /* Examen-Coctel */ = {
 			isa = PBXGroup;
 			children = (
+				7AB986FD2A3A854A00177CE4 /* Controller */,
 				E36AD5552A3A7A7C00410E0E /* AppDelegate.swift */,
 				E36AD5572A3A7A7C00410E0E /* SceneDelegate.swift */,
 				E36AD5592A3A7A7C00410E0E /* ViewController.swift */,
@@ -263,6 +274,7 @@
 			files = (
 				E36AD55A2A3A7A7C00410E0E /* ViewController.swift in Sources */,
 				E36AD5602A3A7A7C00410E0E /* Examen_Coctel.xcdatamodeld in Sources */,
+				7AB986FC2A3A854500177CE4 /* CoctelesViewController.swift in Sources */,
 				E36AD5562A3A7A7C00410E0E /* AppDelegate.swift in Sources */,
 				E36AD5582A3A7A7C00410E0E /* SceneDelegate.swift in Sources */,
 			);
