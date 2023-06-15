@@ -93,6 +93,7 @@
 		7AB986FD2A3A854A00177CE4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E36AD5592A3A7A7C00410E0E /* ViewController.swift */,
 				7AB987012A3A8EF600177CE4 /* CoctelesController.swift */,
 			);
 			path = Controller;
@@ -110,17 +111,11 @@
 		7AB987032A3A8F7A00177CE4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7AB987042A3A8FC000177CE4 /* CoctelesCell.swift */,
-				7AB987052A3A8FC000177CE4 /* CoctelesCell.xib */,
+				E36B1F812A3B742D008E36C0 /* Coctel */,
+				E36AD55B2A3A7A7C00410E0E /* Main.storyboard */,
+				E36AD5632A3A7A7E00410E0E /* LaunchScreen.storyboard */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		7AB987082A3A986A00177CE4 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		E36AD5492A3A7A7C00410E0E = {
@@ -146,17 +141,13 @@
 		E36AD5542A3A7A7C00410E0E /* Examen-Coctel */ = {
 			isa = PBXGroup;
 			children = (
-				7AB987082A3A986A00177CE4 /* New Group */,
-				7AB987032A3A8F7A00177CE4 /* View */,
+				7AB986FD2A3A854A00177CE4 /* Controller */,
 				FA7E1B532A3A8882005952D6 /* ViewModel */,
 				7AB987002A3A881800177CE4 /* Modelo */,
-				7AB986FD2A3A854A00177CE4 /* Controller */,
+				7AB987032A3A8F7A00177CE4 /* View */,
 				E36AD5552A3A7A7C00410E0E /* AppDelegate.swift */,
 				E36AD5572A3A7A7C00410E0E /* SceneDelegate.swift */,
-				E36AD5592A3A7A7C00410E0E /* ViewController.swift */,
-				E36AD55B2A3A7A7C00410E0E /* Main.storyboard */,
 				E36AD5612A3A7A7E00410E0E /* Assets.xcassets */,
-				E36AD5632A3A7A7E00410E0E /* LaunchScreen.storyboard */,
 				E36AD5662A3A7A7E00410E0E /* Info.plist */,
 				E36AD55E2A3A7A7C00410E0E /* Examen_Coctel.xcdatamodeld */,
 			);
@@ -178,6 +169,15 @@
 				E36AD57B2A3A7A7E00410E0E /* Examen_CoctelUITestsLaunchTests.swift */,
 			);
 			path = "Examen-CoctelUITests";
+			sourceTree = "<group>";
+		};
+		E36B1F812A3B742D008E36C0 /* Coctel */ = {
+			isa = PBXGroup;
+			children = (
+				7AB987042A3A8FC000177CE4 /* CoctelesCell.swift */,
+				7AB987052A3A8FC000177CE4 /* CoctelesCell.xib */,
+			);
+			path = Coctel;
 			sourceTree = "<group>";
 		};
 		FA7E1B532A3A8882005952D6 /* ViewModel */ = {
