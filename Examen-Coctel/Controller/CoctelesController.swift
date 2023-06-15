@@ -11,6 +11,9 @@ class CoctelesController: UIViewController {
 
     @IBOutlet weak var itemCocteles: UICollectionView!
     
+    var coctel : [Coctel] = []
+    var result = Result<Coctel>()
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -37,25 +40,32 @@ extension CoctelesController :  UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "AreaCardVentasCell", for: indexPath) as! CoctelesCell
-        cell.NombreCoctel.text = area[indexPath.row].Nombre
-        if area[indexPath.row].Nombre ==  area[indexPath.row].Nombre {
-            cell.imagenmostrar.image = UIImage(named: "\(area[indexPath.row].Nombre!)")
-        }else{
-            //let imagenData : Data = //Proceso inverso de base64 a Data
-            //cell.imageView.image = UIImage(data: imagenData)
-        }
+        cell.NombreCoctel.text = coctel[indexPath.row].strDrink
+//        if area[indexPath.row].Nombre ==  area[indexPath.row].Nombre {
+//            cell.imagenmostrar.image = UIImage(named: "\(area[indexPath.row].Nombre!)")
+//        }else{
+//            //let imagenData : Data = //Proceso inverso de base64 a Data
+//            //cell.imageView.image = UIImage(data: imagenData)
+//        }
         return cell
     }
     
     func updateUI(){
-        var result = AreaViewModel.GetAll()
-        area.removeAll()
-        if result.Correct!{
-            for objarea in result.Objects!{
-                let resultado = objarea as! Area //Unboxing
-                area.append(resultado)
+        coctel.removeAll()
+        var result = CoctelViewModel.Get{[self] result, error in
+            if let resultsoucer = result{
+                self.result = resultsoucer
+                if result?.Correct == true{
+                    for objCoctel in result!.Objects!{
+                        let coctel = objCoctel as! Coctel //Unboxing
+                        coctel.append(coctel)
+                        DispatchQueue.main.async {
+                            self.tableviewAlumnoMateria.reloadData()
+                        }
+                        
+                    }
+                }
             }
-            itemAreaVentas.reloadData()
         }
     }
     
