@@ -85,7 +85,7 @@ extension CoctelesController: UICollectionViewDelegate, UICollectionViewDataSour
 //            cell.ImageView.image = UIImage(named: "\(drinks[indexPath.row].strDrinkThumb)")
 //            var imgUrl = URL(string: "www.thecocktaildb.com/images/ingredients/\(drinks[indexPath.row].strDrink)")!
             self.imgUrl = drinks[indexPath.row].strDrinkThumb
-            var url = URL(string: "\(imgUrl)/preview")!
+            let url = URL(string: "\(imgUrl)/preview")!
             cell.imagenCoctel.load(url: url)
         }
         

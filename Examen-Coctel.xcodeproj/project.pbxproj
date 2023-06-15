@@ -11,6 +11,7 @@
 		7AB987062A3A8FC000177CE4 /* CoctelesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB987042A3A8FC000177CE4 /* CoctelesCell.swift */; };
 		7AB987072A3A8FC000177CE4 /* CoctelesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB987052A3A8FC000177CE4 /* CoctelesCell.xib */; };
 		7AB9870B2A3A991200177CE4 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB9870A2A3A991200177CE4 /* Result.swift */; };
+		7AD91BBA2A3B7BA200E4249D /* Ingrediente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD91BB92A3B7BA200E4249D /* Ingrediente.swift */; };
 		E36AD5562A3A7A7C00410E0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AD5552A3A7A7C00410E0E /* AppDelegate.swift */; };
 		E36AD5582A3A7A7C00410E0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AD5572A3A7A7C00410E0E /* SceneDelegate.swift */; };
 		E36AD55D2A3A7A7C00410E0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36AD55B2A3A7A7C00410E0E /* Main.storyboard */; };
@@ -22,7 +23,6 @@
 		E36AD57C2A3A7A7E00410E0E /* Examen_CoctelUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AD57B2A3A7A7E00410E0E /* Examen_CoctelUITestsLaunchTests.swift */; };
 		E36B1F832A3B758C008E36C0 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B1F822A3B758C008E36C0 /* Root.swift */; };
 		E36B1F852A3B75CC008E36C0 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B1F842A3B75CC008E36C0 /* Drink.swift */; };
-		E36B1F872A3B7675008E36C0 /* Ingrediente.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B1F862A3B7675008E36C0 /* Ingrediente.swift */; };
 		FA7E1B552A3A88DF005952D6 /* CoctelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E1B542A3A88DF005952D6 /* CoctelViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +48,7 @@
 		7AB987042A3A8FC000177CE4 /* CoctelesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctelesCell.swift; sourceTree = "<group>"; };
 		7AB987052A3A8FC000177CE4 /* CoctelesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoctelesCell.xib; sourceTree = "<group>"; };
 		7AB9870A2A3A991200177CE4 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		7AD91BB92A3B7BA200E4249D /* Ingrediente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingrediente.swift; sourceTree = "<group>"; };
 		E36AD5522A3A7A7C00410E0E /* Examen-Coctel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Examen-Coctel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36AD5552A3A7A7C00410E0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E36AD5572A3A7A7C00410E0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		E36AD57B2A3A7A7E00410E0E /* Examen_CoctelUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Examen_CoctelUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E36B1F822A3B758C008E36C0 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
 		E36B1F842A3B75CC008E36C0 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
-		E36B1F862A3B7675008E36C0 /* Ingrediente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingrediente.swift; sourceTree = "<group>"; };
 		FA7E1B542A3A88DF005952D6 /* CoctelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctelViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,7 +106,7 @@
 				7AB9870A2A3A991200177CE4 /* Result.swift */,
 				E36B1F822A3B758C008E36C0 /* Root.swift */,
 				E36B1F842A3B75CC008E36C0 /* Drink.swift */,
-				E36B1F862A3B7675008E36C0 /* Ingrediente.swift */,
+				7AD91BB92A3B7BA200E4249D /* Ingrediente.swift */,
 			);
 			path = Modelo;
 			sourceTree = "<group>";
@@ -331,7 +331,7 @@
 				E36B1F832A3B758C008E36C0 /* Root.swift in Sources */,
 				E36AD5582A3A7A7C00410E0E /* SceneDelegate.swift in Sources */,
 				7AB987022A3A8EF600177CE4 /* CoctelesController.swift in Sources */,
-				E36B1F872A3B7675008E36C0 /* Ingrediente.swift in Sources */,
+				7AD91BBA2A3B7BA200E4249D /* Ingrediente.swift in Sources */,
 				7AB987062A3A8FC000177CE4 /* CoctelesCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
