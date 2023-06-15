@@ -16,7 +16,7 @@ struct Result <T: Codable> : Codable{
     
     
     init(){
-        self.Correct = true
+        self.Correct = false
         self.ErrorMessage = ""
         self.Objects = []
         self.Object = nil

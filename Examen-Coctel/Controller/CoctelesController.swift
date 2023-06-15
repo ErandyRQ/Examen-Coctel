@@ -27,29 +27,6 @@ class CoctelesController: UIViewController {
         
     }
     
-
-   
-    
-    
-
-}
-extension CoctelesController :  UICollectionViewDelegate, UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "coctelCell", for: indexPath) as! CoctelesCell
-        cell.NombreCoctel.text = coctel[indexPath.row].strDrink
-//        if area[indexPath.row].Nombre ==  area[indexPath.row].Nombre {
-//            cell.imagenmostrar.image = UIImage(named: "\(area[indexPath.row].Nombre!)")
-//        }else{
-//            //let imagenData : Data = //Proceso inverso de base64 a Data
-//            //cell.imageView.image = UIImage(data: imagenData)
-//        }
-        return cell
-    }
-    
     func updateUI(){
         coctel.removeAll()
         var result = CoctelViewModel.Get{[self] result, error in
@@ -68,6 +45,30 @@ extension CoctelesController :  UICollectionViewDelegate, UICollectionViewDataSo
             }
         }
     }
+   
+    
+    
+
+}
+
+extension CoctelesController :  UICollectionViewDelegate, UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "coctelCell", for: indexPath) as! CoctelesCell
+        cell.NombreCoctel.text = coctel[indexPath.row].strDrink
+//        if area[indexPath.row].Nombre ==  area[indexPath.row].Nombre {
+//            cell.imagenmostrar.image = UIImage(named: "\(area[indexPath.row].Nombre!)")
+//        }else{
+//            //let imagenData : Data = //Proceso inverso de base64 a Data
+//            //cell.imageView.image = UIImage(data: imagenData)
+//        }
+        return cell
+    }
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //print("seleciono \(area[indexPath.row].IdArea)")
