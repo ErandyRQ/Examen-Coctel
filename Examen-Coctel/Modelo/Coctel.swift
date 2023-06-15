@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+struct Coctel : Codable{
+    var idDrink : String
+    var strDrink : String?
+    var strIngredient1 : String?
+    
+    init(){
+        self.idDrink = ""
+        self.strDrink = ""
+        self.strIngredient1 = ""
+        
+        
+    }
+}
+

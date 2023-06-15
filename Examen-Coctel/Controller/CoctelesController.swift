@@ -39,7 +39,7 @@ extension CoctelesController :  UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "AreaCardVentasCell", for: indexPath) as! CoctelesCell
+        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "coctelCell", for: indexPath) as! CoctelesCell
         cell.NombreCoctel.text = coctel[indexPath.row].strDrink
 //        if area[indexPath.row].Nombre ==  area[indexPath.row].Nombre {
 //            cell.imagenmostrar.image = UIImage(named: "\(area[indexPath.row].Nombre!)")
@@ -57,10 +57,10 @@ extension CoctelesController :  UICollectionViewDelegate, UICollectionViewDataSo
                 self.result = resultsoucer
                 if result?.Correct == true{
                     for objCoctel in result!.Objects!{
-                        let coctel = objCoctel as! Coctel //Unboxing
-                        coctel.append(coctel)
+                        let coctelres = objCoctel as! Coctel //Unboxing
+                        coctel.append(coctelres)
                         DispatchQueue.main.async {
-                            self.tableviewAlumnoMateria.reloadData()
+                            self.itemCocteles.reloadData()
                         }
                         
                     }
