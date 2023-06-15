@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Ingrediente : Codable{
+struct DrinkIngrediente : Codable{
     var strDrink : String
     var strDrinkThumb : String
     var idDrink : String

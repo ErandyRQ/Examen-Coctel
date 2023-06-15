@@ -9,9 +9,11 @@ import UIKit
 
 class CoctelesController: UIViewController {
 
+    @IBOutlet weak var sbBuscar: UISearchBar!
+    @IBOutlet weak var scSelect: UISegmentedControl!
     @IBOutlet weak var itemCocteles: UICollectionView!
     
-    
+    var ingredientes: [DrinkIngrediente] = []
            var drinks : [Drink] = []
            var drinksAMostrar : [Drink] = []
            var Id : String = ""
@@ -60,19 +62,32 @@ extension CoctelesController: UICollectionViewDelegate, UICollectionViewDataSour
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
+        if drinks.count > 0 {
             return drinks.count
-        
+        }
+        else {
+            return ingredientes.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "coctelCell", for: indexPath) as! CoctelesCell
         
-       
-            cell.NombreCoctel.text = drinks[indexPath.row].strDrink
-            self.imgUrl = drinks[indexPath.row].strDrinkThumb
-            let url = URL(string: "\(imgUrl)/preview")!
-            cell.imagenCoctel.load(url: url)
+        if drinks.count > 0 {
+            
+                 cell.NombreCoctel.text = drinks[indexPath.row].strDrink
+                 self.imgUrl = drinks[indexPath.row].strDrinkThumb
+                 let url = URL(string: "\(imgUrl)/preview")!
+                 cell.imagenCoctel.load(url: url)
+            
+        } else {
+            
+                 cell.NombreCoctel.text = ingredientes[indexPath.row].strDrink
+                 self.imgUrl = ingredientes[indexPath.row].strDrinkThumb
+                 let url = URL(string: "\(imgUrl)/preview")!
+                 cell.imagenCoctel.load(url: url)
+            
+        }
         
         
 
@@ -111,5 +126,48 @@ extension UIImageView {
     }
 }
 
-
+extension CoctelesController: UISearchBarDelegate {
+    
+    //func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+    //}
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if self.scSelect.selectedSegmentIndex == 0 {
+            let nombre = sbBuscar.text!
+            CoctelViewModel.GetByNombre(nombre.lowercased(), resp: { result, error in
+                if let resultSource = result{
+                    self.drinks.removeAll()
+                    self.ingredientes.removeAll()
+                    for objdrinks in resultSource.drinks!{
+                        let drink = objdrinks
+                        self.drinks.append(drink)
+                    }
+                    DispatchQueue.main.async {
+                        self.itemCocteles.reloadData()
+                        searchBar.endEditing(true)
+                    }
+                }
+            })
+        }
+        else if self.scSelect.selectedSegmentIndex == 1 {
+            let ingrediente = sbBuscar.text!
+            CoctelViewModel.GetByIngrediente(ingrediente, resp: { result, error in
+                if let resultSource = result{
+                    self.drinks.removeAll()
+                    self.ingredientes.removeAll()
+                    for objdrinks in resultSource.drinks!{
+                        let drink = objdrinks
+                        self.ingredientes.append(drink)
+                    }
+                    DispatchQueue.main.async {
+                        self.itemCocteles.reloadData()
+                        searchBar.endEditing(true)
+                    }
+                }
+            })
+        }
+    }
+ 
+}
 

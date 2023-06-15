@@ -53,9 +53,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wDo-0d-SJT">
-                                <rect key="frame" x="10" y="104" width="367" height="727"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="2YZ-Dp-uLg">
+                                <rect key="frame" x="0.0" y="103" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="g9b-fB-5V0"/>
+                                </connections>
+                            </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UmV-nk-Cyq">
+                                <rect key="frame" x="100" y="164" width="193" height="32"/>
+                                <segments>
+                                    <segment title="Nombre"/>
+                                    <segment title="Ingrediente"/>
+                                </segments>
+                            </segmentedControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wDo-0d-SJT">
+                                <rect key="frame" x="10" y="206" width="373" height="552"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DfN-S5-yyS">
                                     <size key="itemSize" width="128" height="128"/>
@@ -77,15 +90,29 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UmV-nk-Cyq" firstAttribute="top" secondItem="2YZ-Dp-uLg" secondAttribute="bottom" constant="5" id="0fN-U4-MhE"/>
+                            <constraint firstItem="2YZ-Dp-uLg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EgW-SA-1Io"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wDo-0d-SJT" secondAttribute="trailing" constant="10" id="IG8-gf-VAW"/>
+                            <constraint firstItem="wDo-0d-SJT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="IaZ-GG-bVu"/>
+                            <constraint firstItem="UmV-nk-Cyq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="JEf-pa-7jt"/>
+                            <constraint firstItem="wDo-0d-SJT" firstAttribute="top" secondItem="UmV-nk-Cyq" secondAttribute="bottom" constant="11" id="Otd-Hj-3Eb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UmV-nk-Cyq" secondAttribute="trailing" constant="100" id="QdZ-06-kEd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wDo-0d-SJT" secondAttribute="bottom" constant="11" id="e7L-nI-n01"/>
+                            <constraint firstItem="2YZ-Dp-uLg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fAr-aV-7a5"/>
+                            <constraint firstItem="2YZ-Dp-uLg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kee-Nz-nkB"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3v5-WV-MMH"/>
                     <connections>
                         <outlet property="itemCocteles" destination="wDo-0d-SJT" id="mb8-Bm-YBB"/>
+                        <outlet property="sbBuscar" destination="2YZ-Dp-uLg" id="3zk-mX-CD0"/>
+                        <outlet property="scSelect" destination="UmV-nk-Cyq" id="gaU-g3-bNf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="415" y="-656"/>
+            <point key="canvasLocation" x="414.50381679389312" y="-656.33802816901414"/>
         </scene>
         <!--Favoritos-->
         <scene sceneID="ZjJ-bZ-ywz">

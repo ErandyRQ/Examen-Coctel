@@ -51,7 +51,7 @@ class CoctelViewModel{
                }.resume()
            }
            
-           static func GetByIngrediente(_ nombre : String, resp: @escaping(Root<Ingrediente>?, Error?) -> Void){
+           static func GetByIngrediente(_ nombre : String, resp: @escaping(Root<DrinkIngrediente>?, Error?) -> Void){
                let url = URL(string: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=\(nombre)")!
                
                URLSession.shared.dataTask(with: url){data, response, error in
@@ -61,7 +61,7 @@ class CoctelViewModel{
                            let decoder = JSONDecoder()
                            let jsonString = String(data: dataSource, encoding: String.Encoding.utf8)
        //                    print(jsonString)
-                           let result = try! decoder.decode(Root<Ingrediente>.self, from: dataSource)
+                           let result = try! decoder.decode(Root<DrinkIngrediente>.self, from: dataSource)
                            resp(result, nil)
                        }
                        if let errorSource = error{
