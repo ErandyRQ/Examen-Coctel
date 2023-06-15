@@ -9,7 +9,7 @@ import Foundation
 
 class CoctelViewModel {
     
-    static func GetAll(Response: @escaping(HTTPURLResponse?, Result<Coctel> /*Debe tener el modelo Drinks*/, Error?) -> Void) {
+    static func GetAll(Response: @escaping(HTTPURLResponse?, Result<Coctel>? /*Debe tener el modelo Drinks*/, Error?) -> Void) {
         let urlString = "www.thecocktaildb.com/api/json/v1/1/search.php?f=a"
         let url = URL(string: urlString)!
         var result = Result<Coctel>() // agregar el modelo Drinks
@@ -18,7 +18,7 @@ class CoctelViewModel {
             if let httpResponse = response as? HTTPURLResponse {
                 if let dataSource = data {
                     let decoder = JSONDecoder()
-                    let resultSource = decoder.decode(Coctel, from: dataSource)
+                    let resultSource = try! decoder.decode(Coctel.self, from: dataSource)
                     result.Object = resultSource
                     
                     Response(httpResponse, result, nil)
@@ -31,18 +31,19 @@ class CoctelViewModel {
         }.resume()
     }
     
-    static func GetByName(_ nombre: String, Response: @escaping(HTTPURLResponse?,Result<>/*Aqui Modelo drinks*/ , Error?) -> Void) {
+    static func GetByName(_ nombre: String, Response: @escaping(HTTPURLResponse?,Result<Coctel>?/*Aqui Modelo drinks*/ , Error?) -> Void) {
         let urlString = "www.thecocktaildb.com/api/json/v1/1/search.php?s=\(nombre)"
         let url = URL(string: urlString)!
-        var result = Result<>() // Agregar el modelo Drinks
+        var result = Result<Coctel>() // Agregar el modelo Drinks
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let httpResponse = response as? HTTPURLResponse {
                 if let dataSource = data {
                     let decoder = JSONDecoder()
-                    let resultSource = decoder.decode(<#T##type: Decodable.Protocol##Decodable.Protocol#>, from: dataSource)
+                    let resultSource = try! decoder.decode(Coctel.self, from: dataSource)
+                    result.Object = resultSource
                     
-                    Response(httpResponse, resultSource, nil)
+                    Response(httpResponse, result, nil)
                 }
             }
             
