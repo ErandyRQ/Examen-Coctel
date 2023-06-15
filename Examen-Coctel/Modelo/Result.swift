@@ -6,12 +6,14 @@
 //
 
 import Foundation
-struct Result <T: Codable> : Codable{
+
+struct Result {
+    
     var Correct : Bool?
     var ErrorMessage : String?
-    var Objects : [T]?
-    var Object : T?
-//    var Ex : Error?
+    var Objects : [Any]?
+    var Object : Any?
+    var Ex : Error?
    
     
     

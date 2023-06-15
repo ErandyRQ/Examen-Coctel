@@ -9,19 +9,66 @@ import Foundation
 
 class CoctelViewModel{
     
-    static func Get(res : @escaping (Result<Coctel>?,Error?)->Void){
-            let url = URL (string: "https://www.thecocktaildb.com/api/json/v1/1/search.php?s")!
-            URLSession.shared.dataTask(with: url) { data, response, error in
-                if let dataSource = data{
-                    let decoder = JSONDecoder ( )
-                    let result = try! decoder.decode(Result<Coctel>.self, from: dataSource)
-                    res (result, nil)
-                }
-                if let errrSource = error{
-                    res(nil,errrSource)
-                }
-            }.resume ()
-        
-        
-    }
+    static func GetAll(resp: @escaping(Root<Drink>?, Error?) -> Void){
+               let url = URL(string: "https://www.thecocktaildb.com/api/json/v1/1/search.php?s")!
+               
+               URLSession.shared.dataTask(with: url){data, response, error in
+                   let httpResponse = response as! HTTPURLResponse
+                   if 200...299 ~= httpResponse.statusCode{
+                       if let dataSource = data{
+                           let decoder = JSONDecoder()
+                           let jsonString = String(data: dataSource, encoding: String.Encoding.utf8)
+       //                    print(jsonString)
+                           let result = try! decoder.decode(Root<Drink>.self, from: dataSource)
+                           resp(result, nil)
+                       }
+                       if let errorSource = error{
+                           resp(nil, errorSource)
+                       }
+                   }
+                   
+               }.resume()
+           }
+       
+       static func GetByNombre(_ nombre : String, resp: @escaping(Root<Drink>?, Error?) -> Void){
+               let url = URL(string: "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=\(nombre)")!
+               
+               URLSession.shared.dataTask(with: url){data, response, error in
+                   let httpResponse = response as! HTTPURLResponse
+                   if 200...299 ~= httpResponse.statusCode{
+                       if let dataSource = data{
+                           let decoder = JSONDecoder()
+                           let jsonString = String(data: dataSource, encoding: String.Encoding.utf8)
+       //                    print(jsonString)
+                           let result = try! decoder.decode(Root<Drink>.self, from: dataSource)
+                           resp(result, nil)
+                       }
+                       if let errorSource = error{
+                           resp(nil, errorSource)
+                       }
+                   }
+                   
+               }.resume()
+           }
+           
+           static func GetByIngrediente(_ nombre : String, resp: @escaping(Root<Ingrediente>?, Error?) -> Void){
+               let url = URL(string: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=\(nombre)")!
+               
+               URLSession.shared.dataTask(with: url){data, response, error in
+                   let httpResponse = response as! HTTPURLResponse
+                   if 200...299 ~= httpResponse.statusCode{
+                       if let dataSource = data{
+                           let decoder = JSONDecoder()
+                           let jsonString = String(data: dataSource, encoding: String.Encoding.utf8)
+       //                    print(jsonString)
+                           let result = try! decoder.decode(Root<Ingrediente>.self, from: dataSource)
+                           resp(result, nil)
+                       }
+                       if let errorSource = error{
+                           resp(nil, errorSource)
+                       }
+                   }
+                   
+               }.resume()
+           }
 }
