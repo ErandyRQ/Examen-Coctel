@@ -31,7 +31,6 @@ class DetalleController: UIViewController {
     
     var ingredientes: [DrinkIngrediente] = []
     var drinks : [Drink] = []
-    var drinksAMostrar : [Drink] = []
     var idCoctel : String = ""
     var nombre : String = ""
     var ingrediente1 : String = ""
@@ -39,10 +38,10 @@ class DetalleController: UIViewController {
     var ingrediente3 : String = ""
     var instrucciones : String = ""
     var imgUrl = ""
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         lblNombre.text = String(nombre)
         lblIngrediente1.text = String(ingrediente1)
         lblIngrediente2.text = String(ingrediente2)
@@ -56,26 +55,14 @@ class DetalleController: UIViewController {
     }
     
     @IBAction func btnmegusta(_ sender: UIButton) {
+        var drink = Drink()
+        drink.idDrink = drinks[sender.tag].idDrink
         
-             var drink = Drink()
-               drink.idDrink = idCoctel
-               drink.strDrink = nombre
-               drink.strDrinkThumb = imgUrl
-               drink.strIngredient1 = ingrediente1
-               drink.strIngredient2 = ingrediente2
-               drink.strIngredient3 = ingrediente3
-               drink.strInstructions = instrucciones
-               
         let result = CoctelFavoritoViewModel.Add(drink)
-               if result.Correct{
-                   print("Drink agregado")
-               }
-               else{
-                   print("Error al agregar Drink")
-               }
-           }
-    
-    
-
-
+        
+        
+        
+        
+        
+    }
 }

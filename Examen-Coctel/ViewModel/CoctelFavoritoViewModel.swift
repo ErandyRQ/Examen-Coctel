@@ -14,7 +14,7 @@ class CoctelFavoritoViewModel{
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
        
-       func Add(_ drink : Drink) -> Result{
+    static func Add(_ drink : Drink) -> Result{
            var result = Result()
            
            do{
@@ -32,9 +32,9 @@ class CoctelFavoritoViewModel{
            coctel.setValue(drink.strIngredient2, forKey: "strIngredient2")
            coctel.setValue(drink.strIngredient3, forKey: "strIngredient3")
            coctel.setValue(drink.strDrinkThumb, forKey: "strDrinkThumb")
-               try context.save()
-               //result.Correct = false
-               result.Correct = true
+           try context.save()
+        
+           result.Correct = true
            }
            catch let error {
                result.Correct = false
