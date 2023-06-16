@@ -12,6 +12,7 @@
 		7AB987072A3A8FC000177CE4 /* CoctelesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB987052A3A8FC000177CE4 /* CoctelesCell.xib */; };
 		7AB9870B2A3A991200177CE4 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB9870A2A3A991200177CE4 /* Result.swift */; };
 		7AD91BBA2A3B7BA200E4249D /* DrinkIngrediente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD91BB92A3B7BA200E4249D /* DrinkIngrediente.swift */; };
+		CEA913E02A3C038B00F39B75 /* DetalleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA913DF2A3C038B00F39B75 /* DetalleController.swift */; };
 		E36AD5562A3A7A7C00410E0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AD5552A3A7A7C00410E0E /* AppDelegate.swift */; };
 		E36AD5582A3A7A7C00410E0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AD5572A3A7A7C00410E0E /* SceneDelegate.swift */; };
 		E36AD55D2A3A7A7C00410E0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36AD55B2A3A7A7C00410E0E /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		7AB987052A3A8FC000177CE4 /* CoctelesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoctelesCell.xib; sourceTree = "<group>"; };
 		7AB9870A2A3A991200177CE4 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		7AD91BB92A3B7BA200E4249D /* DrinkIngrediente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkIngrediente.swift; sourceTree = "<group>"; };
+		CEA913DF2A3C038B00F39B75 /* DetalleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleController.swift; sourceTree = "<group>"; };
 		E36AD5522A3A7A7C00410E0E /* Examen-Coctel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Examen-Coctel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36AD5552A3A7A7C00410E0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E36AD5572A3A7A7C00410E0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				7AB987012A3A8EF600177CE4 /* CoctelesController.swift */,
+				CEA913DF2A3C038B00F39B75 /* DetalleController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				E36AD5562A3A7A7C00410E0E /* AppDelegate.swift in Sources */,
 				FA7E1B552A3A88DF005952D6 /* CoctelViewModel.swift in Sources */,
 				E36B1F832A3B758C008E36C0 /* Root.swift in Sources */,
+				CEA913E02A3C038B00F39B75 /* DetalleController.swift in Sources */,
 				E36AD5582A3A7A7C00410E0E /* SceneDelegate.swift in Sources */,
 				7AB987022A3A8EF600177CE4 /* CoctelesController.swift in Sources */,
 				7AD91BBA2A3B7BA200E4249D /* DrinkIngrediente.swift in Sources */,

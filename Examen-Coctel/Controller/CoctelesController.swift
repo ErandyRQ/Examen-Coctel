@@ -13,7 +13,7 @@ class CoctelesController: UIViewController {
     @IBOutlet weak var scSelect: UISegmentedControl!
     @IBOutlet weak var itemCocteles: UICollectionView!
     
-    var ingredientes: [DrinkIngrediente] = []
+           var ingredientes: [DrinkIngrediente] = []
            var drinks : [Drink] = []
            var drinksAMostrar : [Drink] = []
            var Id : String = ""
@@ -109,6 +109,21 @@ extension CoctelesController: UICollectionViewDelegate, UICollectionViewDataSour
         self.imgUrl = drinks[indexPath.row].strDrinkThumb
            self.performSegue(withIdentifier: "SegueDescripcion", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+               
+                if segue.identifier == "SegueDescripcion"{
+                    let formControl = segue.destination as! DetalleController
+                    formControl.idCoctel = self.Id
+                    formControl.nombre = self.Nombre
+                    formControl.ingrediente1 = self.Ingrediente1
+                    formControl.ingrediente2 = self.Ingrediente2
+                    formControl.ingrediente3 = self.Ingrediente3
+                    formControl.instrucciones = self.instrucciones
+                    formControl.imgUrl = self.imgUrl
+                    
+                }
+            }
     
   
 }
