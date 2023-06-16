@@ -55,7 +55,27 @@ class DetalleController: UIViewController {
         imageCoctel.load(url: url)
     }
     
-
+    @IBAction func btnmegusta(_ sender: UIButton) {
+        
+             var drink = Drink()
+               drink.idDrink = idCoctel
+               drink.strDrink = nombre
+               drink.strDrinkThumb = imgUrl
+               drink.strIngredient1 = ingrediente1
+               drink.strIngredient2 = ingrediente2
+               drink.strIngredient3 = ingrediente3
+               drink.strInstructions = instrucciones
+               
+        let result = CoctelFavoritoViewModel.Add(drink)
+               if result.Correct{
+                   print("Drink agregado")
+               }
+               else{
+                   print("Error al agregar Drink")
+               }
+           }
     
+    
+
 
 }
