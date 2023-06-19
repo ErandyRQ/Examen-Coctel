@@ -91,24 +91,35 @@ class FavCoctelViewModel{
                 if existe.count == 1 {
                     result.Correct = true
                 } else {
-         
-    func GetAll() -> Result{
+                    result.Correct = false
+                }
+            }
+        } catch let ex {
+            result.Correct = false
+            result.ErrorMessage = ex.localizedDescription
+            result.Ex = ex
+        }
+        
+        return result
+    }
+            
+            func GetAll() -> Result{
                 var result = Result()
-
+                
                 do{
                     let context = appDelegate.persistentContainer.viewContext
                     let response = NSFetchRequest<NSFetchRequestResult>(entityName: "CoctelCD")
-
+                    
                     let resultFetch = try context.fetch(response)
-
+                    
                     result.Objects = []
-
+                    
                     for objDrink in resultFetch as! [NSManagedObject]{
                         var drink = Drink()
-
+                        
                         drink.idDrink = objDrink.value(forKey: "idDrink") as! String
                         drink.strDrink = objDrink.value(forKey: "strDrink") as! String
-                         //drink.strCategory = objDrink.value(forKey: "strCategory") as! String
+                        //drink.strCategory = objDrink.value(forKey: "strCategory") as! String
                         drink.strDrinkThumb = objDrink.value(forKey: "strDrinkThumb") as! String
                         drink.strIngredient1 = objDrink.value(forKey: "strIngredient1") as! String
                         drink.strIngredient2 = objDrink.value(forKey: "strIngredient2") as! String
@@ -118,69 +129,17 @@ class FavCoctelViewModel{
                         result.Objects!.append(drink)
                         result.Correct = true
                     }
-
-
-        //            result.Correct = true
+                    
+                    
+                    //            result.Correct = true
                 }
                 catch let error{
                     result.Correct = false
                     result.ErrorMessage = error.localizedDescription
                     result.Ex = error
                 }
-
+                
                 return result
             }
-            
-        } catch let ex {
-            result.Correct = false
-            result.ErrorMessage = ex.localizedDescription
-            result.Ex = ex
-        }
-        
-        return result
-    }
-    
-//    func GetAll() -> Result{
-//               var result = Result()
-//               
-//               let context = appDelegate.persistentContainer.viewContext
-//               
-//               let response = NSFetchRequest<NSFetchRequestResult> (entityName: "VentaProducto")
-//               
-//               do{
-//                   result.Objects = []
-//                   let resultFetch = try context.fetch(response)
-//                   for obj in resultFetch as! [NSManagedObject]{
-//                       //Instancia de venta producto //Crear Modelo
-//                       let modeloventaproducto = ProductoVentasViewModel()
-//                       
-//                       modeloventaproducto.producto = Producto()
-//                       
-//                       modeloventaproducto.producto?.IdProducto =  obj.value(forKey:"idProducto") as! Int
-//                       modeloventaproducto.Cantidad = obj.value(forKey: "cantidad") as! Int
-//                    
-//                       let result1 = ProductosViewModel.GetById(IdProducto: modeloventaproducto.producto?.IdProducto as! Int)
-//                       if result1.Correct!{
-//                          // let producto = result1.Object! as! Departamento
-//                         let producto = result1.Object! as! Producto
-//                           
-//                           modeloventaproducto.producto?.Nombre = producto.Nombre
-//                           modeloventaproducto.producto?.imagen = producto.imagen
-//                           modeloventaproducto.producto?.PrecioUnitario = producto.PrecioUnitario
-//                       }
-//                     
-//                       result.Objects?.append(modeloventaproducto)
-//                      
-//                   }
-//                 
-//                   result.Correct = true
-//               }
-//               catch let error {
-//                   result.Correct = false
-//                   result.ErrorMessage = error.localizedDescription
-//                   result.Ex = error
-//               }
-//               
-//               return result
-//           }
+  
 }

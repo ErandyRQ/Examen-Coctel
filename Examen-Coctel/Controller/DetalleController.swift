@@ -118,7 +118,7 @@ class DetalleController: UIViewController {
         
         drink.idDrink = DrinkDetail!.idDrink
         drink.strDrink = DrinkDetail!.strDrink
-        drink.strInstructions = DrinkDetail!.strInstructions
+        //drink.strInstructions = DrinkDetail!.strInstructions
         drink.strDrinkThumb = DrinkDetail!.strDrinkThumb
         drink.strIngredient1 = DrinkDetail!.strIngredient1
         drink.strIngredient2 = DrinkDetail!.strIngredient2
