@@ -28,6 +28,8 @@ class DetalleController: UIViewController {
     @IBOutlet weak var imageIngrediente3: UIImageView!
     
     @IBOutlet weak var lblInstrucciones: UILabel!
+
+    let favcoctelViewModel = FavCoctelViewModel()
     
     var ingredientes: [DrinkIngrediente] = []
     var drinks : [Drink] = []
@@ -52,14 +54,45 @@ class DetalleController: UIViewController {
         
         let url = URL(string: "\(imgUrl)/preview")!
         imageCoctel.load(url: url)
+        
+       
     }
     
     @IBAction func btnmegusta(_ sender: UIButton) {
+       
         var drink = Drink()
-        drink.idDrink = drinks[sender.tag].idDrink
         
-        let result = CoctelFavoritoViewModel.Add(drink)
+        drink.idDrink = idCoctel
+        drink.strDrink = nombre
+        drink.strInstructions = instrucciones
+        drink.strDrinkThumb = imgUrl
+        drink.strIngredient1 = ingrediente1
+        drink.strIngredient2 = ingrediente2
+        drink.strIngredient3 = ingrediente3
         
+        
+        
+        let result = favcoctelViewModel.Add(drink)
+        if result.Correct!{
+                    let alert = UIAlertController(title: "Aviso", message: "Bebida agregada a favoritos", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        self.dismiss(animated: true)
+                    })
+                    
+                    alert.addAction(action)
+                    self.present(alert, animated: true)
+                    print("Drink agregado")
+                }
+                else{
+                    let alert = UIAlertController(title: "Aviso", message: "Error al agregar bebida a favoritos", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        self.dismiss(animated: true)
+                    })
+                    
+                    alert.addAction(action)
+                    self.present(alert, animated: true)
+                    print("Error al agregar Drink")
+                }
         
         
         
