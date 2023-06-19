@@ -72,6 +72,37 @@ class FavCoctelViewModel{
            return result
        }
     
+    func GetById(_ idCoctel: String) -> Result {
+        var result = Result()
+        
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let response = NSFetchRequest<NSFetchRequestResult> (entityName: "CoctelCD")
+        
+        let predicate = NSPredicate(format: "idDrink = %@", idCoctel)
+        response.predicate = predicate
+        
+        do {
+            let resultFetch = try context.fetch(response)
+            
+            if let existe = resultFetch as? [NSManagedObject] {
+                // Si hay en el arreglo mas de un elemento entonces ya no se debe agregar de nuevo el coctel o bebida
+                if existe.count == 1 {
+                    result.Correct = true
+                } else {
+                    result.Correct = false
+                }
+            }
+            
+        } catch let ex {
+            result.Correct = false
+            result.ErrorMessage = ex.localizedDescription
+            result.Ex = ex
+        }
+        
+        return result
+    }
+    
 //    func GetAll() -> Result{
 //               var result = Result()
 //               

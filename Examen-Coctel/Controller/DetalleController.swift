@@ -32,6 +32,7 @@ class DetalleController: UIViewController {
     var imgUrl = ""
     let imgIngredienteUrl = "https://www.thecocktaildb.com/images/ingredients/"
     var DrinkDetail: Drink? = nil
+    var fav: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,11 @@ class DetalleController: UIViewController {
             lblInstrucciones.text = String(DrinkDetail!.strInstructions)
             lblNombre.text = String(DrinkDetail!.strDrink)
             GetIngredientes()
+            let checkFav = favcoctelViewModel.GetById(DrinkDetail!.idDrink)
+            if checkFav.Correct! {
+                btnMeGusta.imageView?.image = UIImage(systemName: "heart.fill")
+                fav = true
+            }
         }
        
     }
@@ -67,8 +73,14 @@ class DetalleController: UIViewController {
             if let resultSource = result{
                 if let drink = resultSource.drinks?.first {
                     self.DrinkDetail = drink
+                    self.idCoctel = drink.idDrink
                     self.GetIngredientes()
                     DispatchQueue.main.async {
+                        let checkFav = self.favcoctelViewModel.GetById(self.idCoctel)
+                        if checkFav.Correct! {
+                            self.btnMeGusta.imageView?.image = UIImage(systemName: "heart.fill")
+                            self.fav = true
+                        }
                         self.lblNombre.text = self.DrinkDetail!.strDrink
                         self.lblInstrucciones.text = self.DrinkDetail!.strInstructions
                         let url = URL(string: "\(self.DrinkDetail!.strDrinkThumb)/preview")!
@@ -104,39 +116,62 @@ class DetalleController: UIViewController {
        
         var drink = Drink()
         
-        drink.idDrink = idCoctel
-        drink.strDrink = nombre
-        drink.strInstructions = instrucciones
-        drink.strDrinkThumb = imgUrl
-        drink.strIngredient1 = ingrediente1
-        drink.strIngredient2 = ingrediente2
-        drink.strIngredient3 = ingrediente3
+        drink.idDrink = DrinkDetail!.idDrink
+        drink.strDrink = DrinkDetail!.strDrink
+        drink.strInstructions = DrinkDetail!.strInstructions
+        drink.strDrinkThumb = DrinkDetail!.strDrinkThumb
+        drink.strIngredient1 = DrinkDetail!.strIngredient1
+        drink.strIngredient2 = DrinkDetail!.strIngredient2
+        drink.strIngredient3 = DrinkDetail!.strIngredient3
         
-        
-        
-        let result = favcoctelViewModel.Add(drink)
-        if result.Correct!{
-                    let alert = UIAlertController(title: "Aviso", message: "Bebida agregada a favoritos", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                        self.dismiss(animated: true)
-                    })
-                    
-                    alert.addAction(action)
-                    self.present(alert, animated: true)
-                    print("Drink agregado")
+        if fav {
+            let result = favcoctelViewModel.Delete(idCoctel)
+            if result.Correct! {
+                let alert = UIAlertController(title: "Aviso", message: "Bebida eliminada de favoritos", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default) {_ in
+                    self.dismiss(animated: true)
+                    self.btnMeGusta.imageView?.image = UIImage(systemName: "heart")
                 }
-                else{
-                    let alert = UIAlertController(title: "Aviso", message: "Error al agregar bebida a favoritos", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                        self.dismiss(animated: true)
-                    })
-                    
-                    alert.addAction(action)
-                    self.present(alert, animated: true)
-                    print("Error al agregar Drink")
-                }
-        
-        
+                alert.addAction(action)
+                self.present(alert, animated: true)
+                print("Drink eliminado")
+            } else {
+                let alert = UIAlertController(title: "Aviso", message: "Error al eliminar bebida de favoritos", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                    self.dismiss(animated: true)
+                })
+                
+                alert.addAction(action)
+                self.present(alert, animated: true)
+                print("Error al agregar Drink")
+                
+            }
+        } else {
+            
+            let result = favcoctelViewModel.Add(drink)
+            if result.Correct!{
+                let alert = UIAlertController(title: "Aviso", message: "Bebida agregada a favoritos", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                    self.dismiss(animated: true)
+                    self.btnMeGusta.imageView?.image = UIImage(systemName: "heart.fill")
+                })
+                
+                alert.addAction(action)
+                self.present(alert, animated: true)
+                print("Drink agregado")
+            }
+            else{
+                let alert = UIAlertController(title: "Aviso", message: "Error al agregar bebida a favoritos", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                    self.dismiss(animated: true)
+                })
+                
+                alert.addAction(action)
+                self.present(alert, animated: true)
+                print("Error al agregar Drink")
+            }
+            
+        }
         
         
     }
