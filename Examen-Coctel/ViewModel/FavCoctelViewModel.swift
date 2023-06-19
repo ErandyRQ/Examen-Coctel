@@ -25,11 +25,12 @@ class FavCoctelViewModel{
           
           coctel.setValue(drink.idDrink, forKey: "idDrink")
           coctel.setValue(drink.strDrink, forKey: "strDrink")
-          coctel.setValue(drink.strInstructions, forKey: "strInstructions")
+        //  coctel.setValue(drink.strInstructions, forKey: "strInstructions")
+          coctel.setValue(drink.strDrinkThumb, forKey: "strDrinkThumb")
           coctel.setValue(drink.strIngredient1, forKey: "strIngredient1")
           coctel.setValue(drink.strIngredient2, forKey: "strIngredient2")
           coctel.setValue(drink.strIngredient3, forKey: "strIngredient3")
-          coctel.setValue(drink.strDrinkThumb, forKey: "strDrinkThumb")
+          
           try context.save()
        
           result.Correct = true
@@ -90,8 +91,44 @@ class FavCoctelViewModel{
                 if existe.count == 1 {
                     result.Correct = true
                 } else {
-                    result.Correct = false
+         
+    func GetAll() -> Result{
+                var result = Result()
+
+                do{
+                    let context = appDelegate.persistentContainer.viewContext
+                    let response = NSFetchRequest<NSFetchRequestResult>(entityName: "CoctelCD")
+
+                    let resultFetch = try context.fetch(response)
+
+                    result.Objects = []
+
+                    for objDrink in resultFetch as! [NSManagedObject]{
+                        var drink = Drink()
+
+                        drink.idDrink = objDrink.value(forKey: "idDrink") as! String
+                        drink.strDrink = objDrink.value(forKey: "strDrink") as! String
+                         //drink.strCategory = objDrink.value(forKey: "strCategory") as! String
+                        drink.strDrinkThumb = objDrink.value(forKey: "strDrinkThumb") as! String
+                        drink.strIngredient1 = objDrink.value(forKey: "strIngredient1") as! String
+                        drink.strIngredient2 = objDrink.value(forKey: "strIngredient2") as! String
+                        drink.strIngredient3 = objDrink.value(forKey: "strIngredient3") as? String
+                        //drink.strInstructions = objDrink.value(forKey: "strInstructions") as! String
+                        
+                        result.Objects!.append(drink)
+                        result.Correct = true
+                    }
+
+
+        //            result.Correct = true
                 }
+                catch let error{
+                    result.Correct = false
+                    result.ErrorMessage = error.localizedDescription
+                    result.Ex = error
+                }
+
+                return result
             }
             
         } catch let ex {

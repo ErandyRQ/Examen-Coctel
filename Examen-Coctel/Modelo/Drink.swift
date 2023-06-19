@@ -16,7 +16,11 @@ struct Drink : Codable{
     var strIngredient1 : String
     var strIngredient2 : String
     var strIngredient3 : String?
-    var strInstructions : String
+    var strIngredient4 : String?
+    var strIngredient5 : String?
+    var strIngredient6 : String?
+    var strIngredient7 : String?
+    //var strInstructions : String
     
     init(){
         self.idDrink = ""
@@ -26,6 +30,11 @@ struct Drink : Codable{
         self.strIngredient1 = ""
         self.strIngredient2 = ""
         self.strIngredient3 = ""
-        self.strInstructions = ""
+        self.strIngredient3 = ""
+        self.strIngredient4 = ""
+        self.strIngredient5 = ""
+        self.strIngredient6 = ""
+        self.strIngredient7 = ""
+        //self.strInstructions = ""
     }
 }

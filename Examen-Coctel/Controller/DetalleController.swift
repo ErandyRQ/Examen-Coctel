@@ -17,7 +17,7 @@ class DetalleController: UIViewController {
     
     @IBOutlet weak var cvIngredientes: UICollectionView!
     
-    @IBOutlet weak var lblInstrucciones: UILabel!
+  //  @IBOutlet weak var lblInstrucciones: UILabel!
 
     let favcoctelViewModel = FavCoctelViewModel()
     
@@ -28,7 +28,7 @@ class DetalleController: UIViewController {
     var ingrediente1 : String = ""
     var ingrediente2 : String = ""
     var ingrediente3 : String = ""
-    var instrucciones : String = ""
+    //var instrucciones : String = ""
     var imgUrl = ""
     let imgIngredienteUrl = "https://www.thecocktaildb.com/images/ingredients/"
     var DrinkDetail: Drink? = nil
@@ -56,7 +56,7 @@ class DetalleController: UIViewController {
         } else {
             let url = URL(string: "\(DrinkDetail!.strDrinkThumb)/preview")!
             imageCoctel.load(url: url)
-            lblInstrucciones.text = String(DrinkDetail!.strInstructions)
+          //  lblInstrucciones.text = String(DrinkDetail!.strInstructions)
             lblNombre.text = String(DrinkDetail!.strDrink)
             GetIngredientes()
             let checkFav = favcoctelViewModel.GetById(DrinkDetail!.idDrink)
@@ -82,7 +82,7 @@ class DetalleController: UIViewController {
                             self.fav = true
                         }
                         self.lblNombre.text = self.DrinkDetail!.strDrink
-                        self.lblInstrucciones.text = self.DrinkDetail!.strInstructions
+                    //    self.lblInstrucciones.text = self.DrinkDetail!.strInstructions
                         let url = URL(string: "\(self.DrinkDetail!.strDrinkThumb)/preview")!
                         self.imageCoctel.load(url: url)
                         self.cvIngredientes.reloadData()
