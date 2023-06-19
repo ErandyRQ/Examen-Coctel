@@ -23,6 +23,7 @@ class CoctelesController: UIViewController {
            var Ingrediente3 : String = ""
            var instrucciones : String = ""
            var imgUrl = ""
+    var DrinkDetail : Drink? = nil
    
     
     override func viewDidLoad() {
@@ -98,15 +99,19 @@ extension CoctelesController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        Id = drinks[indexPath.row].idDrink
-           print(Id)
-        Nombre = drinks[indexPath.row].strDrink
-        print(Nombre)
-        self.Ingrediente1 = drinks[indexPath.row].strIngredient1
-        self.Ingrediente2 = drinks[indexPath.row].strIngredient2
-        self.Ingrediente3 = drinks[indexPath.row].strIngredient3 ?? "No tiene ingrediente"
-        self.instrucciones = drinks[indexPath.row].strInstructions
-        self.imgUrl = drinks[indexPath.row].strDrinkThumb
+        if !drinks.isEmpty {
+            Id = drinks[indexPath.row].idDrink
+               print(Id)
+            Nombre = drinks[indexPath.row].strDrink
+            DrinkDetail = drinks[indexPath.row]
+            print(Nombre)
+
+            self.instrucciones = drinks[indexPath.row].strInstructions
+            self.imgUrl = drinks[indexPath.row].strDrinkThumb
+        } else if !ingredientes.isEmpty{
+            // Agregue esta parte para la parte de la busqueda por ingrediente
+            Id = ingredientes[indexPath.row].idDrink
+        }
            self.performSegue(withIdentifier: "SegueDescripcion", sender: self)
     }
     
@@ -114,14 +119,12 @@ extension CoctelesController: UICollectionViewDelegate, UICollectionViewDataSour
                
                 if segue.identifier == "SegueDescripcion"{
                     let formControl = segue.destination as! DetalleController
-                    formControl.idCoctel = self.Id
-                    formControl.nombre = self.Nombre
-                    formControl.ingrediente1 = self.Ingrediente1
-                    formControl.ingrediente2 = self.Ingrediente2
-                    formControl.ingrediente3 = self.Ingrediente3
-                    formControl.instrucciones = self.instrucciones
-                    formControl.imgUrl = self.imgUrl
-                    
+                    if scSelect.selectedSegmentIndex == 0 {
+                        formControl.DrinkDetail = self.DrinkDetail
+                    }
+                    if scSelect.selectedSegmentIndex == 1 {
+                        formControl.idCoctel = self.Id
+                    }
                 }
             }
     
