@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import Network
 
 class CoctelesController: UIViewController {
 
+    
+    let networkMonitor = NWPathMonitor()
+    
     @IBOutlet weak var sbBuscar: UISearchBar!
     @IBOutlet weak var scSelect: UISegmentedControl!
     @IBOutlet weak var itemCocteles: UICollectionView!
@@ -25,6 +29,9 @@ class CoctelesController: UIViewController {
            var imgUrl = ""
     var DrinkDetail : Drink? = nil
    
+    override func viewWillAppear(_ animated: Bool) {
+            NoInternet()
+        }
     
     override func viewDidLoad() {
         
@@ -34,24 +41,67 @@ class CoctelesController: UIViewController {
         itemCocteles.delegate = self
         itemCocteles.dataSource = self
         updateUI()
-        
-        
-        
     }
     
+    
     func updateUI(){
-        CoctelViewModel.GetAll { result, error in
-            if let resultSource = result{
-                for objdrinks in resultSource.drinks!{
-                    let drink = objdrinks
-                    self.drinks.append(drink)
-                }
+        
+        networkMonitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                
+                
                 DispatchQueue.main.async {
-                    self.itemCocteles.reloadData()
+                    
+                    let alert = UIAlertController(title: "Mensaje", message: "Estas conectado a la Red", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "Aceptar", style: .default)
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
+                    
+                    CoctelViewModel.GetAll { result, error in
+                        if let resultSource = result{
+                            for objdrinks in resultSource.drinks!{
+                                let drink = objdrinks
+                                self.drinks.append(drink)
+                            }
+                            DispatchQueue.main.async {
+                                self.itemCocteles.reloadData()
+                            }
+                        }
+                        
+                    }
                 }
             }
         }
+        
+        let queue = DispatchQueue(label: "Network connectivity")
+        networkMonitor.start(queue: queue)
     }
+    func NoInternet(){
+        
+        networkMonitor.pathUpdateHandler = { path in
+            if path.status != .satisfied {
+                DispatchQueue.main.async {
+                    let Main = UIStoryboard(name: "Main", bundle: Bundle.main)
+                    guard let inicioVC = Main.instantiateViewController(withIdentifier: "ViewFavoritos") as? FavoritosController else {
+                        return
+                    }
+                    self.navigationController?.pushViewController(inicioVC, animated: true)
+                    self.navigationController?.navigationBar.isHidden = true
+                    
+                    let alert = UIAlertController(title: "Mensaje", message: "No Estas conectado a la Red", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "Aceptar", style: .default)
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
+        
+        let queue = DispatchQueue(label: "Network connectivity")
+        networkMonitor.start(queue: queue)
+    }
+
+
+
 }
 
 extension CoctelesController: UICollectionViewDelegate, UICollectionViewDataSource{
